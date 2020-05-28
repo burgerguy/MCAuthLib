@@ -23,12 +23,44 @@ import java.util.UUID;
  * Service used for session-related queries.
  */
 public class SessionService {
-    private static final String BASE_URL = "https://sessionserver.mojang.com/session/minecraft/";
-    private static final String JOIN_URL = BASE_URL + "join";
-    private static final String HAS_JOINED_URL = BASE_URL + "hasJoined";
-    private static final String PROFILE_URL = BASE_URL + "profile";
+    private static String BASE_URL = "https://sessionserver.mojang.com/session/minecraft/";
+    private static String JOIN_URL = BASE_URL + "join";
+    private static String HAS_JOINED_URL = BASE_URL + "hasJoined";
+    private static String PROFILE_URL = BASE_URL + "profile";
 
-    private Proxy proxy;
+    public static String getBaseUrl() {
+		return BASE_URL;
+	}
+
+	public static void setBaseUrl(String baseUrl) {
+		BASE_URL = baseUrl;
+	}
+
+	public static String getJoinUrl() {
+		return JOIN_URL;
+	}
+
+	public static void setJoinUrl(String joinUrl) {
+		JOIN_URL = joinUrl;
+	}
+
+	public static String getHasJoinedUrl() {
+		return HAS_JOINED_URL;
+	}
+
+	public static void setHasJoinedUrl(String hasJoinedUrl) {
+		HAS_JOINED_URL = hasJoinedUrl;
+	}
+
+	public static String getProfileUrl() {
+		return PROFILE_URL;
+	}
+
+	public static void setProfileUrl(String profileUrl) {
+		PROFILE_URL = profileUrl;
+	}
+
+	private Proxy proxy;
 
     /**
      * Creates a new SessionService instance.

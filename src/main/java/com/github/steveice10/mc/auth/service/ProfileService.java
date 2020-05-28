@@ -16,10 +16,26 @@ import java.util.UUID;
  * Repository for looking up profiles by name.
  */
 public class ProfileService {
-    private static final String BASE_URL = "https://api.mojang.com/profiles/";
-    private static final String SEARCH_URL = BASE_URL + "minecraft";
+    private static String BASE_URL = "https://api.mojang.com/profiles/";
+    private static String SEARCH_URL = BASE_URL + "minecraft";
 
-    private static final int MAX_FAIL_COUNT = 3;
+    public static String getBaseUrl() {
+		return BASE_URL;
+	}
+
+	public static void setBaseUrl(String baseUrl) {
+		BASE_URL = baseUrl;
+	}
+
+	public static String getSearchUrl() {
+		return SEARCH_URL;
+	}
+
+	public static void setSearchUrl(String searchUrl) {
+		SEARCH_URL = searchUrl;
+	}
+
+	private static final int MAX_FAIL_COUNT = 3;
     private static final int DELAY_BETWEEN_PAGES = 100;
     private static final int DELAY_BETWEEN_FAILURES = 750;
     private static final int PROFILES_PER_REQUEST = 100;

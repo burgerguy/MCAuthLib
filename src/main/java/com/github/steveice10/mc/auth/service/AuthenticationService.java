@@ -16,10 +16,42 @@ import java.util.UUID;
  * Service used for authenticating users.
  */
 public class AuthenticationService {
-    private static final String BASE_URL = "https://authserver.mojang.com/";
-    private static final String AUTHENTICATE_URL = BASE_URL + "authenticate";
-    private static final String REFRESH_URL = BASE_URL + "refresh";
-    private static final String INVALIDATE_URL = BASE_URL + "invalidate";
+	private static String BASE_URL = "https://authserver.mojang.com/";
+    private static String AUTHENTICATE_URL = BASE_URL + "authenticate";
+    private static String REFRESH_URL = BASE_URL + "refresh";
+    private static String INVALIDATE_URL = BASE_URL + "invalidate";
+    
+    public static String getBaseUrl() {
+		return BASE_URL;
+	}
+
+	public static void setBaseUrl(String baseUrl) {
+		BASE_URL = baseUrl;
+	}
+
+	public static String getAuthenticateUrl() {
+		return AUTHENTICATE_URL;
+	}
+
+	public static void setAuthenticateUrl(String authenticateUrl) {
+		AUTHENTICATE_URL = authenticateUrl;
+	}
+
+	public static String getRefreshUrl() {
+		return REFRESH_URL;
+	}
+
+	public static void setRefreshUrl(String refreshUrl) {
+		REFRESH_URL = refreshUrl;
+	}
+
+	public static String getInvalidateUrl() {
+		return INVALIDATE_URL;
+	}
+
+	public static void setInvalidateUrl(String invalidateUrl) {
+		INVALIDATE_URL = invalidateUrl;
+	}
 
     private String clientToken;
     private Proxy proxy;
